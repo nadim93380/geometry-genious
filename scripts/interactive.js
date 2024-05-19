@@ -10,11 +10,11 @@ function getDataById(data) {
 function addDataById(area) {
     const areaField = document.getElementById('areaField');
     const newLi = document.createElement('li');
-    newLi.innerText = 'The Area Of Your Shape is : ' + area.toFixed(3);
+    const areaExt = document.createElement('p');
+    areaExt.innerHTML = `cm<sup>2</sup>`
+    newLi.innerText = 'The Area Of Your Shape is : ' + area.toFixed(2) + ' ' + areaExt.innerText;
     areaField.appendChild(newLi);
 }
-
-
 
 
 // for area value of triangle
@@ -81,4 +81,10 @@ document.getElementById('ellCalculateBtn').addEventListener('click', function ()
     if (typeof (ellArea) === 'number' && !isNaN(ellArea)){
         addDataById(ellArea);
     }
+})
+
+// function for reset button
+document.getElementById('resetBtn').addEventListener('click', function () {
+    const areaField = document.getElementById('areaField');
+    areaField.innerHTML = '';
 })
