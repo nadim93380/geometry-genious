@@ -13,6 +13,7 @@ function addDataById(area) {
     const areaExt = document.createElement('p');
     areaExt.innerHTML = `cm<sup>2</sup>`
     newLi.innerText = 'The Area Of Your Shape is : ' + area.toFixed(2) + ' ' + areaExt.innerText;
+    newLi.setAttribute('class', 'text-xl font-semibold')
     areaField.appendChild(newLi);
 }
 
